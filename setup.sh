@@ -15,7 +15,7 @@ if [ -d "$ENV_DIR" ]; then
     echo "✅ Virtual environment already exists at: $ENV_DIR"
     echo "👉 To activate it, run:"
     echo "   source $ENV_DIR/bin/activate"
-    exit 0  # Exit the script early if venv already exists
+    exit 0
 else
     echo "Creating new virtual environment in: $ENV_DIR"
     python3 -m venv "$ENV_DIR"
@@ -25,9 +25,9 @@ fi
 echo "Activating virtual environment..."
 source "$ENV_DIR/bin/activate"
 
-# Upgrade pip safely inside venv
+# Upgrade pip safely inside venv (without --break-system-packages)
 echo "Upgrading pip..."
-python3 -m pip install --upgrade pip setuptools wheel --break-system-packages
+python3 -m pip install --upgrade pip setuptools wheel
 
 # Install common ML libraries inside venv
 echo "Installing ML libraries..."
@@ -40,14 +40,13 @@ python3 -m pip install --no-cache-dir \
     seaborn \
     jupyter \
     ipython \
-    notebook \
-    --break-system-packages  # Fix externally-managed error
+    notebook
 
 # Deactivate the environment
 echo "Deactivating virtual environment..."
 deactivate
 
-# Print activation message with absolute path
+# Print activation message
 echo "✅ Setup complete!"
-echo "To start using the environment, run:"
-echo "    source $ENV_DIR/bin/activate"
+echo "👉 To start using the environment, run:"
+echo "   source $ENV_DIR/bin/activate"

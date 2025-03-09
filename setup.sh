@@ -40,7 +40,17 @@ python3 -m pip install --no-cache-dir \
     seaborn \
     jupyter \
     ipython \
-    notebook
+    notebook \
+    tensorflow \
+    torch \
+    torchvision \
+    torchaudio \
+    keras \
+    transformers \
+    opencv-python \
+    tensorflow-datasets \
+    torchtext \
+    timm
 
 # Deactivate the environment
 echo "Deactivating virtual environment..."

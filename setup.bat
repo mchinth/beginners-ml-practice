@@ -25,8 +25,8 @@ call "%ENV_DIR%\Scripts\activate"
 echo Upgrading pip...
 python -m pip install --upgrade pip setuptools wheel
 
-:: Install required ML packages
-echo Installing ML libraries...
+:: Install required ML & Deep Learning packages
+echo Installing ML and Deep Learning libraries...
 python -m pip install --no-cache-dir ^
     numpy ^
     pandas ^
@@ -36,7 +36,17 @@ python -m pip install --no-cache-dir ^
     seaborn ^
     jupyter ^
     ipython ^
-    notebook
+    notebook ^
+    tensorflow ^
+    torch ^
+    torchvision ^
+    torchaudio ^
+    keras ^
+    transformers ^
+    opencv-python ^
+    tensorflow-datasets ^
+    torchtext ^
+    timm
 
 :: Deactivate the virtual environment
 deactivate

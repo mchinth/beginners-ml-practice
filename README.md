@@ -1,19 +1,23 @@
-# beginners-ml-practice
-Beginner-friendly notebooks and examples for learning basic Machine Learning techniques.
-
 # Machine Learning Environment Setup
 
-Simple setup for creating a Python virtual environment for machine learning development.
+This repository provides a simple setup for creating a Python virtual environment for machine learning development.
 
 ## **Setup Instructions**
 
 ### **1. Running the Setup Script**
+#### **Linux/macOS**
 ```bash
 chmod +x setup.sh  # Make executable
 ./setup.sh         # Run setup
 ```
 
+#### **Windows**
+```batch
+setup.bat
+```
+
 ### **2. Activating the Virtual Environment**
+#### **Linux/macOS**
 If the virtual environment exists, the script returns early and provides an activation command:
 ```bash
 source .venv_$(hostname)/bin/activate
@@ -23,25 +27,20 @@ To deactivate:
 deactivate
 ```
 
+#### **Windows**
+```batch
+call .venv_%COMPUTERNAME%\Scripts\activate
+```
+To deactivate:
+```batch
+deactivate
+```
+
 ### **3. Installed Packages**
 - `numpy`, `pandas`, `matplotlib`, `scikit-learn`, `scipy`, `seaborn`
 - `jupyter`, `ipython`, `notebook`
 
-### **4. Updating Dependencies**
-To install additional packages:
-```bash
-source .venv_$(hostname)/bin/activate
-pip install <package_name>
-deactivate
-```
-
-### **5. Recreating the Virtual Environment**
-```bash
-rm -rf .venv_$(hostname)
-./setup.sh
-```
-
-### **6. Troubleshooting**
+### **4. Troubleshooting**
 - **Slow Setup:** Use a local directory instead of network storage:
   ```bash
   python3 -m venv ~/my_project_venv
